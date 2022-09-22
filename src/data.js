@@ -10,10 +10,9 @@ import { Link } from "react-router-dom"
 
 
 
-const people=[
+const data=[
     {
         id:1,
-        img:"logo",
         title:"Laptops",
         price:"320",
         image:"../images/AppleLogo.jpg",
@@ -105,4 +104,4 @@ const people=[
     },
 
 ]
-export default people;
+export default data;
