@@ -8,7 +8,7 @@ import CenterNavbar from './CenterNavbar';
 import Products from './Products';
 import Login from './Components/Login';
 import Navbar from './Navbar';
-import {Route, Routes,Link, Switch } from "react-router-dom"
+import { Route, Routes, Link, Switch } from "react-router-dom"
 import Mobile from './Components/Mobile/Mobile';
 import Cart from './Components/Cart'
 import EarPhone from './Components/Earphone/EarPhone'
@@ -52,38 +52,38 @@ function App() {
 
 
   return (
-   <>
-   {/* <Home /> */}
-   <Navbar />
+    <>
+      {/* <Home /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Cart" element={<Cart/>} />
-        <Route path="/Login" element={<Login/>} />
-        <Route path="/Mobile/" element={<Mobile/>} />
-        <Route path="/Laptops/" element={<Laptops/>} />
-        <Route path="/Monitor/" element={<Monitor/>} />
-        <Route path="/ComputerAccessories" element={<ComputerAccessories/>} />
-        <Route path="/EarPhone/" element={<EarPhone/>} />
-       
-       {/* <Route exact path="/${category}/:id" element={<Product />} component={Product} /> */}
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Mobile/" element={<Mobile />} />
+        <Route path="/Laptops/" element={<Laptops />} />
+        <Route path="/Monitor/" element={<Monitor />} />
+        <Route path="/ComputerAccessories" element={<ComputerAccessories />} />
+        <Route path="/EarPhone/" element={<EarPhone />} />
 
-<Route  path="/products"  element={<Products />} />
+        {/* <Route exact path="/${category}/:id" element={<Product />} component={Product} /> */}
 
-{/* <Route exact path='/products'>{<Products/>}</Route> */}
+        <Route path="/products" element={<Products />} />
 
-<Route exact path="/products/:productId"  element={<Display/>} />
+        {/* <Route exact path='/products'>{<Products/>}</Route> */}
+
+        <Route path="/products/:productId" element={<Display />} />
 
 
       </Routes>
 
       {/* <Switch>
       </Switch> */}
-{/* <Display /> */}
-  {/* <Navbar />
+      {/* <Display /> */}
+      {/* <Navbar />
   <CenterNavbar />
   <Footer />
   <EndFooter /> */}
-  </>
+    </>
   );
 }
 

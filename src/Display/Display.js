@@ -6,35 +6,39 @@ import { Link, useParams } from 'react-router-dom';
 
 function Display() {
 
-  
-
-// console.log(props.id);
-//   const [data,setData]=useState(categories)
-  
-//  const filterResult = (categItem) => {
-//   const result = data.filter((curData) => {
-//     return curData.id === categItem;
-//    });
-//    setData(result);
-//   };
 
 
-const {productId}=useParams()
-const thisProduct=data.find(prod=>prod.id===productId)
-// const {image,title}=productss
+  // console.log(props.id);
+  //   const [data,setData]=useState(categories)
 
-console.log(thisProduct.title);
+  //  const filterResult = (categItem) => {
+  //   const result = data.filter((curData) => {
+  //     return curData.id === categItem;
+  //    });
+  //    setData(result);
+  //   };
+
+
+  const { productId } = useParams()
+  // console.log(data[0].title);
+
+  // const thisProduct = data.map((id, element) => id.id == productId)
+  // const thisProduct = data.find(prod => prod.id === productId)
+  // const {image,title}=productss
+
+  const thisProduct = data.find(thisProducts => thisProducts.id == productId)
+  console.log(thisProduct.title);
 
   return (
-   <>
+    <>
 
 
-<img src={thisProduct.image} alt="" />
-<h5 className='bg-red-600'>{thisProduct.title}</h5>
-{/* <h4>is{match.params.id}</h4> */}
+      <img src={thisProduct.image} alt="" />
+      <h5 className='bg-red-600'>{thisProduct.title}</h5>
+      {/* <h4>is{match.params.id}</h4> */}
 
 
-        {/* {data.map((values) => {
+      {/* {data.map((values) => {
           const { id, title, price, image,stars,reviews,category} = values;
           console.log(values.category);
           return (
@@ -91,10 +95,10 @@ console.log(thisProduct.title);
           );
         })} */}
 
-     
-     
 
-   </>
+
+
+    </>
   )
 }
 
