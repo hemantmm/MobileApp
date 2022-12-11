@@ -5,7 +5,7 @@ import people from "../data";
 
 function Product(id) {
   // const id = 5;
-  console.log(id);
+  // console.log(id);
 
   return (
     <>

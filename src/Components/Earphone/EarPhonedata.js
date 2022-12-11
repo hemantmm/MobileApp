@@ -1,4 +1,4 @@
-const EarPhonedata=[
+const data=[
     {
         id:9,
         title:"nike3",
@@ -18,4 +18,4 @@ const EarPhonedata=[
         stars:"★★★★★",
     },
 ]
-export default EarPhonedata
+export default data

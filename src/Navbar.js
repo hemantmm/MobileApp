@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import logo from "../images/HikeLog.jpg";
-// import logo from "../src/images/HikeLog.jpg"
+
 import logo from "./images/HikeLogo.jpg"
-// import searchLog from "./images/searchLog.jpg";
 import searchLog from "./images/searchLog.jpg"
 import cartLogo from "./images/cartLogo.jpg"
-// import cartLogo from "./images/cartLogo.jpg";
-// import loginLogo from "./images/loginLogo.jpg";
 import loginLogo from "./images/loginLogo.jpg"
 import { AiFillShopping } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
+import {FaShoppingCart} from "react-icons/fa"
 import {Route, Routes,Link, NavLink} from "react-router-dom"
 
 
@@ -87,6 +84,18 @@ function Navbar() {
             </a>
             </Link>
 
+            <Link to="/cart">
+            <a href="" className="">
+            <FaShoppingCart
+              size={28}
+              title="Login"
+              onMouseOver={MouseOver}
+              onMouseOut={MouseOut}
+              
+            />
+            </a>
+            </Link>
+            
         </div>
       </div>
 
@@ -131,8 +140,7 @@ function Navbar() {
         <Link to="/Monitor"><a href="">Monitor</a></Link>
         <Link to="/ComputerAccessories"><a href="">Computer Accessories</a></Link>
         <Link to="/EarPhone"><a href="">EarPhone</a></Link>
-        {/* <Link to="/Products"><a href="">EarPhone</a></Link> */}
-        <Link to="/products"><a href="">Products</a></Link>
+        {/* <Link to="/products"><a href="">Products</a></Link> */}
 
 
       </ul>

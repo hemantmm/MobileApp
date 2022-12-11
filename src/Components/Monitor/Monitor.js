@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import data from './Monitordata'
 
 function Monitor() {
@@ -14,9 +15,9 @@ function Monitor() {
      <div className="bottom">
 
      <div className="grid grid-cols-2 w-2/4 ml-16 p-16 ">
-        {data.map((values) => {
-          const { id, title, price, image,stars,reviews,category} = values;
-          console.log(values.category);
+        {data.map((product) => {
+          const { id, title, price, image,stars,reviews,category} = product;
+          console.log(product.category);
           return (
             <>
             {/* <Link to={`/${category}/${id}`}> */}
@@ -31,6 +32,7 @@ function Monitor() {
                     </p>
                   {reviews}</div>
                   <p className="text-xl ml-5">${price}</p>
+              <Link to={`/products/${product.id}`} className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center"> Add to cart</Link>
                   {/* <p
                     className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center"
                     onClick={() => setIncrease(increase + 1)}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import data from './Mobiledata'
 
 function Mobile() {
@@ -20,9 +21,9 @@ function Mobile() {
      <div className="bottom">
 
      <div className="grid grid-cols-2 w-2/4 ml-16 p-16 ">
-        {data.map((values) => {
-          const { id, title, price, image,stars,reviews,category} = values;
-          console.log(values.category);
+        {data.map((product) => {
+          const { id, title, price, image,stars,reviews,category} = product;
+          console.log(product.category);
           return (
             <>
             {/* <Link to={`/${category}/${id}`}> */}
@@ -43,7 +44,11 @@ function Mobile() {
                   >
                     {content}
                   </p> */}
-                  {/* <button className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center" onClick={() => setIncrease(increase + 1)} >Add to cart</button> */}
+                  {/* <button className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center" >Add to cart</button> */}
+              <Link to={`/products/${product.id}`} className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center"> Add to cart</Link>
+              {/* <Link>Add to cart</Link> */}
+              {/* <Link className="border-3 text-lg font-bold cursor-pointer w-36 ml-5 text-center"> Add to cart</Link> */}
+              {/* <Link>Add to cart</Link> */}
                 </div>
               </div>
               {/* </Link> */}

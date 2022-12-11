@@ -1,4 +1,4 @@
-const MobileData=[
+const data=[
     
     {
         id:1,
@@ -22,4 +22,4 @@ const MobileData=[
     },
     
 ]
-export default MobileData
+export default data

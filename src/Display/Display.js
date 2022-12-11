@@ -1,46 +1,46 @@
 import React, { useState } from 'react'
-// import data from './DisplayData'
 import data from '../data'
-// import categories from './DisplayData'
 import { Link, useParams } from 'react-router-dom';
+import Cart from '../Components/Cart';
+
 
 function Display() {
 
-  
 
-// console.log(props.id);
-//   const [data,setData]=useState(categories)
-  
-//  const filterResult = (categItem) => {
-//   const result = data.filter((curData) => {
-//     return curData.id === categItem;
-//    });
-//    setData(result);
-//   };
-
-
-const {productId}=useParams()
-const thisProduct=data.find(prod=>prod.id===productId)
-// const {image,title}=productss
+const {productId}=useParams();
+const thisProduct=data.find(prod=>prod.id==productId)
+const {image,title,stars,reviews,price,id}=thisProduct
 
 console.log(thisProduct.title);
+
+
+ let [num, setNum]= useState(1);
+  let incNum =()=>{
+    if(num<20)
+    {
+    setNum(Number(num)+1);
+    }
+  };
+  let decNum = () => {
+     if(num>0)
+     {
+      setNum(num - 1);
+     }
+  }
+ let handleChange = (e)=>{
+   setNum(e.target.value);
+  }
 
   return (
    <>
 
 
-<img src={thisProduct.image} alt="" />
-<h5 className='bg-red-600'>{thisProduct.title}</h5>
-{/* <h4>is{match.params.id}</h4> */}
-
-
-        {/* {data.map((values) => {
-          const { id, title, price, image,stars,reviews,category} = values;
-          console.log(values.category);
-          return (
-            <>
-
 <div className="bg-gray-300 w-full mt-10">
+
+<div className='ml-20 text-xl text-red-400'>
+  <Link to={`/`}> Back to home page </Link>
+</div>
+
      <div className="left">
         <span className="relative text-black top-5 left-20 font-bold text-2xl text-slate-500">Products</span>
      </div>
@@ -49,7 +49,7 @@ console.log(thisProduct.title);
 
 <div className='border-2 border-black w-96'>
   <Link to={`/{title}/${id}`}>
-<img src={image} alt="" className='w-64 ml-16 mt-10 mb-10' />
+<img src={image} alt="" className='w-96 h-80' />
 </Link>
 </div>
 <div>
@@ -73,26 +73,33 @@ console.log(thisProduct.title);
 
     
     <div className='right flex flex-col ml-48 mt-10 justify-around h-40 '>
-      <p>500</p>
+      <p>${price*num}</p>
       <p className='text-cyan-700 text-xl'>In stock</p>
-      <p>1</p>
-    </div>
-    <div className='relative right-72 top-64 cursor-pointer '>
-    <button className='border-2 text-2xl '>Add to cart</button>
+
+
+      <div className='flex w-20 justify-between ml-10 relative right-16'>
+        <button class="bg-red-500  " type="button" onClick={decNum}>-</button>
+  {/* <input type="text" className="w-2 bg-gren-500" value={num} onChange={handleChange}/> */}
+  <input type="number" className='ml-2 mr-2 text-xl w-10' name="" value={num} onChange={handleChange} />
+    <button class="bg-blue-500" type="button" onClick={incNum}>+</button>
+  </div>
+
 
     </div>
+
+     
+    <div className='relative right-72 top-60 cursor-pointer '>
+    <Link to={`/cart`} className=' w-32  text-2xl absolute left-2'>
+    {/* <Cart price="1"/ > */}
+      Add to cart
+      </Link>
+
+    </div>
+
 </div>
 
 </div>
     </div> 
-
-
-            </>
-          );
-        })} */}
-
-     
-     
 
    </>
   )

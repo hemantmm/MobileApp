@@ -1,4 +1,4 @@
-const Laptopss=[
+const data=[
     {
         id:3,
         title:"nike3",
@@ -18,4 +18,4 @@ const Laptopss=[
         stars:"★★★☆☆",
     },
 ]
-export default Laptopss
+export default data

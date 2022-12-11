@@ -1,4 +1,4 @@
-const Monitordata=[
+const data=[
     {
         id:5,
         title:"nike2",
@@ -18,4 +18,4 @@ const Monitordata=[
         stars:"★★★★★",
     },
 ]
-export default Monitordata
+export default data

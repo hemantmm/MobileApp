@@ -1,4 +1,4 @@
-const Computerdata=[
+const data=[
     {
         id:7,
         title:"nike4",
@@ -18,4 +18,4 @@ const Computerdata=[
         stars:"★★★★★",
     },
 ]
-export default Computerdata
+export default data
